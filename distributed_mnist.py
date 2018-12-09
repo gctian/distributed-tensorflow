@@ -34,7 +34,6 @@ flags.DEFINE_string('job_name', 'worker', 'job name: worker or ps')
 flags.DEFINE_integer('task_index', 0, 'Index of task within the job')
 # 选择异步并行，同步并行
 flags.DEFINE_bool("issync", False, "是否采用分布式的同步模式")
-flags.DEFINE_bool("is_train", True, "是否train")
 
 FLAGS = flags.FLAGS
 
