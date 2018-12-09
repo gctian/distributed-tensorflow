@@ -1,1 +1,2 @@
-## Distributed TensorFlow
+# distributed-tensorflow
+some experiments for distributed tensorflow
