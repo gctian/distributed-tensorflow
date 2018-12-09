@@ -92,6 +92,7 @@ elif FLAGS.job_name == "worker":
         with tf.train.MonitoredTrainingSession(master=server.target,
                                                is_chief=(FLAGS.task_index == 0),
                                                checkpoint_dir=ckpt_dir,
+                                               save_checkpoint_secs=60,
                                                hooks=hooks) as mon_sess:
             
             while not mon_sess.should_stop():
@@ -104,4 +105,3 @@ elif FLAGS.job_name == "worker":
                 w, b = mon_sess.run([weight, biase])
                 print("time: %s, step: %d, weight: %f, biase: %f, loss: %f" % (
                         str(datetime.now()), step, w, b, loss))
-                #TODO 可以打印下每个worker执行了多少步，local step,更加直观
